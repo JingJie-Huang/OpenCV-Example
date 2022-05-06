@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     cv::Mat image_gray;
     cv::cvtColor(image, image_gray, cv::COLOR_RGB2GRAY);
     cv::imshow("image_gray", image_gray); // 用cv::imshow顯示圖像
+    cv::imwrite("../logo_gray.png", image_gray);
     cv::waitKey(0);             // 暂停程式,等待使用者輸入任意按鍵則程式繼續執行
 
     // 判斷輸入影像的類型
