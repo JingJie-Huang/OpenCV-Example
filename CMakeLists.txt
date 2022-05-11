@@ -13,5 +13,8 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 # 加入要編譯成執行檔的.cpp檔案
 add_executable( Basic Basic.cpp )
+add_executable( Blur Blur.cpp )
 # 鏈結OpenCV函式庫
 target_link_libraries( Basic ${OpenCV_LIBS} )
+target_link_libraries( Blur ${OpenCV_LIBS} )
+

@@ -43,14 +43,14 @@ int main(int argc, char *argv[])
     // 直接赋值並不會拷貝数劇
     cv::Mat image_another = image;
     // 修改image_another會導致image發生變化
-    image_another(cv::Rect(0, 0, 50, 50)).setTo(0); // 將左上角的100*100的區域設置為0
+    image_another(cv::Rect(0, 0, 50, 50)).setTo(0); // 將左上角的50*50的區域設置為0
     cv::imshow("image", image);
     cv::imshow("image_another", image_another);
     cv::waitKey(0);
 
     // 使用clone函數實現圖像數據拷貝
     cv::Mat image_clone = image.clone();
-    image_clone(cv::Rect(0, 0, 50, 50)).setTo(255);  // 將左上角的100*100的區域設置為255
+    image_clone(cv::Rect(0, 0, 50, 50)).setTo(255);  // 將左上角的50*50的區域設置為255
     cv::imshow("image", image);
     cv::imshow("image_clone", image_clone);
     cv::waitKey(0);
