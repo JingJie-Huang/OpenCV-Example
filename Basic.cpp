@@ -3,7 +3,6 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -25,9 +24,9 @@ int main(int argc, char *argv[])
     // 將讀入的檔案image轉換成灰階影像image_gray
     cv::Mat image_gray;
     cv::cvtColor(image, image_gray, cv::COLOR_RGB2GRAY);
-    cv::imshow("image_gray", image_gray); // 用cv::imshow顯示圖像
-    cv::imwrite("../logo_gray.png", image_gray);  // 用cv::imwrite儲存image_gray
-    cv::waitKey(0); // 暂停程式,等待使用者輸入任意按鍵則程式繼續執行
+    cv::imshow("image_gray", image_gray);        // 用cv::imshow顯示圖像
+    cv::imwrite("../logo_gray.png", image_gray); // 用cv::imwrite儲存image_gray
+    cv::waitKey(0);                              // 暂停程式,等待使用者輸入任意按鍵則程式繼續執行
 
     // 判斷輸入影像的類型
     if (image.type() == CV_8UC1)
@@ -50,14 +49,13 @@ int main(int argc, char *argv[])
 
     // 使用clone函數實現圖像數據拷貝
     cv::Mat image_clone = image.clone();
-    image_clone(cv::Rect(0, 0, 50, 50)).setTo(255);  // 將左上角的50*50的區域設置為255
+    image_clone(cv::Rect(0, 0, 50, 50)).setTo(255); // 將左上角的50*50的區域設置為255
     cv::imshow("image", image);
     cv::imshow("image_clone", image_clone);
     cv::waitKey(0);
 
     // 關閉所有圖像視窗
     cv::destroyAllWindows();
-
 
     return 0;
 }

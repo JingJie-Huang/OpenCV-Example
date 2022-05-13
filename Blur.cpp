@@ -3,7 +3,6 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -27,19 +26,18 @@ int main(int argc, char *argv[])
     cv::GaussianBlur(image, image_blurred_with_5x5_kernel, cv::Size(5, 5), 0);
 
     // 設定顯示圖像的名稱
-    cv::String window_name = "Original"; 
+    cv::String window_name = "Original";
     cv::String window_name_blurred_with_3x3_kernel = "Blurred with 3 x 3 Kernel";
     cv::String window_name_blurred_with_5x5_kernel = "Blurred with 5 x 5 Kernel";
 
     // 顯示原先圖片、和模糊化後的圖片
-    cv::imshow(window_name, image); 
+    cv::imshow(window_name, image);
     cv::imshow(window_name_blurred_with_3x3_kernel, image_blurred_with_3x3_kernel);
     cv::imshow(window_name_blurred_with_5x5_kernel, image_blurred_with_5x5_kernel);
     cv::waitKey(0);
 
     // 關閉所有圖像視窗
     cv::destroyAllWindows();
-
 
     return 0;
 }
