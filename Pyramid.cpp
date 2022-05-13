@@ -28,7 +28,9 @@ int main(int argc, char *argv[])
     // 降採樣後的影像image_down再進行上採樣（zoom out than zoom in）
     cv::pyrUp(image_down, image_down_up, cv::Size(image.cols, image.rows));
     cv::imshow("Zoom out than zoom in", image_down_up); 
-    // 顯示image和image_down_up
+    // 顯示image和image_down_up的差異
+    // 因為pyrUp和pyrDown在說小和放大過程中會進行濾波
+    // 所以image和image_down_up兩者會存在不同的地方
     image_diff = image - image_down_up;
     cv::imshow("Image difference", image_diff);
     cv::waitKey(0);
